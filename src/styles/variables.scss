@@ -1,0 +1,27 @@
+//Fonts
+$global-font: 'Roboto', sans-serif;
+$heading-font: 'Anton', sans-serif;
+$global-weight-regular: 400;
+$global-weight-medium: 500;
+$global-weight-bold: 800;
+
+//Colours
+$primary-color: #609CFF;
+$secondary-color: #4a6789;
+$warning-color: #FF7C69;
+$black: #1F1F1F;
+$white: #EEEFF1;
+$dark-gray: #0B0D14;
+$medium-gray: #191924;
+$light-gray: #DADADA;
+
+$text-color: #333333;
+
+//Breakpoints
+$breakpoints: (
+  small: 320px,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px
+);

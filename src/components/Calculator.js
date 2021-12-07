@@ -9,13 +9,14 @@ const Calculator = () => {
     const [height, setHeight] = useState();
     const [ratioWidth, setRatioWidth] = useState(4);
     const [ratioHeight, setRatioHeight] = useState(3);
-    const [screenWidth, setScreenWidth] = useState(1600);
+    const [screenWidth, setScreenWidth] = useState();
     const [source, setSource] = useState('');
 
     const [results, setResults] = useState([]);
 
     return (
-        <div>
+        <div className="container">
+            <h1>Responsive markup generator</h1>
             <Form
                 width={width}
                 setWidth={setWidth}
@@ -29,8 +30,6 @@ const Calculator = () => {
                 setScreenWidth={setScreenWidth}
                 results={results}
                 setResults={setResults}
-                screenWidth={screenWidth}
-                setScreenWidth={setScreenWidth}
                 source={source}
                 setSource={setSource}
             />
