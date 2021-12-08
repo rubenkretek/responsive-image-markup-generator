@@ -33,7 +33,7 @@ const Calculator = () => {
                 source={source}
                 setSource={setSource}
             />
-            <Code results={results} />
+            <Code results={results} setResults={setResults} />
         </div>
     )
 }

@@ -6,7 +6,7 @@ $code-background: #2E3031;
 .code {
     margin-top: 30px;
     background: $code-background;
-    padding: 60px;
+    padding: 50px 100px 80px;
     max-width: 1300px;
     margin: 0 auto;
     position: relative;
@@ -26,6 +26,47 @@ $code-background: #2E3031;
         left: -100px;
         top: 50%;
         transform: translateY(-50%) rotate(270deg);
+    }
+    .code__button {
+        text-align: center;
+        padding: 10px;
+        transition: all .3s ease;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        &:hover {
+            cursor: pointer;
+        }
+        span {
+            font-weight: $global-weight-bold;
+        }
+    }
+    .code__button--reset {
+        background: $code-red;
+        bottom: 0;
+        left: 0;
+        &:hover {
+            background: #c52e5e;
+        }
+    }
+    .code__button--copy {
+        background: $primary-color;
+        bottom: 0;
+        right: 0;
+        transition: all .3s ease;
+        &:hover {
+            background: $primary-color-hover;
+        }
+    }
+    
+    .code__icon {
+        svg path {
+            stroke: $white;
+        }
     }
 }
 

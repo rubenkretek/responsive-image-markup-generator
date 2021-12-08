@@ -7,10 +7,11 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
         e.preventDefault();
         var ratio = width / ratioWidth;
         var calculated_height = ratio * ratioHeight;
+        var rounded_calculated_height = Math.round(calculated_height);
         setResults([
             ...results,
             {
-                height: calculated_height,
+                height: rounded_calculated_height,
                 width: width,
                 screenWidth: screenWidth,
                 source: source
