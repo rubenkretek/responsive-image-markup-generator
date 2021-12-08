@@ -4,20 +4,21 @@ import CodeLine from "./CodeLine";
 
 const Code = ({ results }) => {
     return (
-        <pre>
-            <code className="html">
-                &lt;picture&gt;
-                {results.map(result => (
-                    <CodeLine
-                        width={result.width}
-                        height={result.height}
-                        screenWidth={result.screenWidth}
-                        source={result.source}
-                    />
-                ))}
-                &lt;/picture&gt;
-            </code>
-        </pre>
+        <div className="code">
+            <h2 className="code__heading">Your Code</h2>
+            <pre>
+                <code className="html">
+                    {results.map(result => (
+                        <CodeLine
+                            width={result.width}
+                            height={result.height}
+                            screenWidth={result.screenWidth}
+                            source={result.source}
+                        />
+                    ))}
+                </code>
+            </pre>
+        </div>
     )
 }
 

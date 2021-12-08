@@ -1,0 +1,31 @@
+$code-yellow: #FED29B;
+$code-red: #EA3771;
+$code-blue: #45F9DD;
+$code-background: #2E3031;
+
+.code {
+    margin-top: 30px;
+    background: $code-background;
+    padding: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    .code-yellow {
+        color: $code-yellow;
+    }
+    .code-red {
+        color: $code-red;
+    }
+    .code-blue {
+        color: $code-blue;
+    }
+    .code__heading {
+        display: block;
+        margin: 0;
+        position: absolute;
+        left: -100px;
+        top: 50%;
+        transform: translateY(-50%) rotate(270deg);
+    }
+}
+

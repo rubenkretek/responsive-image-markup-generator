@@ -9,7 +9,7 @@ const Calculator = () => {
     const [height, setHeight] = useState();
     const [ratioWidth, setRatioWidth] = useState(4);
     const [ratioHeight, setRatioHeight] = useState(3);
-    const [screenWidth, setScreenWidth] = useState();
+    const [screenWidth, setScreenWidth] = useState(1600);
     const [source, setSource] = useState('');
 
     const [results, setResults] = useState([]);

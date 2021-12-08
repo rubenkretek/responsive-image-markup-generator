@@ -1,4 +1,5 @@
 .form {
+    margin-bottom: 100px;
     .form__container {
         display: flex;
         align-items: center;
@@ -73,7 +74,7 @@
         }
         &:hover {
             cursor: pointer;
-            background: red;
+            background: rgba($white, .2);
         }
     }
 }
