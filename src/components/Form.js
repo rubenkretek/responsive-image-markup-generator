@@ -78,7 +78,7 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
                         <option value="1200">1200px</option>
                         <option value="1024">1024px</option>
                         <option value="768">768px</option>
-                        <option value="600">600px</option>
+                        <option value="640">640px</option>
                         <option value="480">480px</option>
                     </select>
                 </div>
