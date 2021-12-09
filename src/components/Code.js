@@ -12,7 +12,6 @@ const Code = ({ results, setResults }) => {
     const copyCode = () => {
         var range = document.createRange();
         range.selectNode(document.getElementById("html"));
-        console.log(range);
         window.getSelection().removeAllRanges(); // clear current selection
         window.getSelection().addRange(range); // to select text
         document.execCommand("copy");
@@ -21,38 +20,62 @@ const Code = ({ results, setResults }) => {
 
     return (
         <div className="code">
-            <h2 className="code__heading">Your Code</h2>
-            <pre>
-                <code className="html" id="html">
-                    {results.map(result => (
-                        <CodeLine
-                            width={result.width}
-                            height={result.height}
-                            screenWidth={result.screenWidth}
-                            source={result.source}
-                        />
-                    ))}
-                </code>
-            </pre>
-            <div className="code__button code__button--reset" onClick={resetCode}>
-                <div className="code__icon">
-                    <IconContext.Provider value={{ size: "1.35em" }}>
-                        <GrPowerReset />
-                    </IconContext.Provider>
+            <div className="code-inner">
+                <h2 className="code__heading">Your Code</h2>
+                <pre>
+                    <code className="html" id="html">
+                        {results.map(result => (
+                            <CodeLine
+                                width={result.width}
+                                height={result.height}
+                                screenWidth={result.screenWidth}
+                                source={result.source}
+                            />
+                        ))}
+                    </code>
+                </pre>
+                <div className="code__button code__button--desktop code__button--reset" onClick={resetCode}>
+                    <div className="code__icon">
+                        <IconContext.Provider value={{ size: "1.35em" }}>
+                            <GrPowerReset />
+                        </IconContext.Provider>
+                    </div>
+                    <span>
+                        Reset
+                    </span>
                 </div>
-                <span>
-                    Reset
-                </span>
+                <div className="code__button code__button--desktop code__button--copy" onClick={copyCode}>
+                    <div className="code__icon">
+                        <IconContext.Provider value={{ size: "1.35em" }}>
+                            <GrCopy />
+                        </IconContext.Provider>
+                    </div>
+                    <span>
+                        Copy
+                    </span>
+                </div>
             </div>
-            <div className="code__button code__button--copy" onClick={copyCode}>
-                <div className="code__icon">
-                    <IconContext.Provider value={{ size: "1.35em" }}>
-                        <GrCopy />
-                    </IconContext.Provider>
+            <div className="code__button-container">
+                <div className="code__button code__button--mobile code__button--reset" onClick={resetCode}>
+                    <div className="code__icon">
+                        <IconContext.Provider value={{ size: "1.35em" }}>
+                            <GrPowerReset />
+                        </IconContext.Provider>
+                    </div>
+                    <span>
+                        Reset
+                    </span>
                 </div>
-                <span>
-                    Copy
-                </span>
+                <div className="code__button code__button--mobile code__button--copy" onClick={copyCode}>
+                    <div className="code__icon">
+                        <IconContext.Provider value={{ size: "1.35em" }}>
+                            <GrCopy />
+                        </IconContext.Provider>
+                    </div>
+                    <span>
+                        Copy
+                    </span>
+                </div>
             </div>
         </div>
     )

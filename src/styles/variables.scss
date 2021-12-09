@@ -26,3 +26,5 @@ $breakpoints: (
   xlarge: 1200px,
   xxlarge: 1440px
 );
+
+@include media(">medium") {}

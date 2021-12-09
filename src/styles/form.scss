@@ -1,9 +1,20 @@
 .form {
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    @include media(">large") {
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
     .form__container {
         display: flex;
-        align-items: center;
-        gap: 30px;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 75px;
+        @include media(">large") {
+            align-items: center;
+            gap: 30px;
+            flex-direction: row;
+        }
         & > div {
             flex-basis: 0;
         }
@@ -20,14 +31,27 @@
     .form__submit {
         flex-grow: 0;
         display: flex;
-        align-self: flex-end;
+        align-self: stretch;
+        button {
+            width: 100%;
+        }
+        @include media(">large") {
+            align-self: flex-end;
+
+        }
     }
     .form__aspect-ratio {
         position: relative;
         min-width: 100px;
+        align-self: center;
+        margin-bottom: 60px;
+        @include media(">large") {
+            margin-bottom: 0;
+        }
     }
     .form__aspect-ratio-inputs {
         display: flex;
+        max-width: 200px;
         input {
             padding-left: 0;
             padding-right: 0;
@@ -54,21 +78,28 @@
     }
     .form__switcher {
         position: absolute;
-        bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
         background: $medium-gray;
-        border-radius: 25px;
+        border-radius: 50px;
         font-family: $heading-font;
-        font-size: 12px;
+        font-size: 26px;
         padding: 2px;
+        bottom: -60px;
+        @include media(">large") {
+            font-size: 12px;
+            bottom: -10px;
+        }
         
     }   
     .form__switcher-item {
-        padding: 0 5px;
-        border-radius: 25px;
+        padding: 10px 25px;
+        border-radius: 50px;
+        @include media(">large") {
+            padding: 0 5px;
+        }
         &.active {
             background: $primary-color;
         }

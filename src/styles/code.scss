@@ -5,11 +5,19 @@ $code-background: #2E3031;
 
 .code {
     margin-top: 30px;
-    background: $code-background;
-    padding: 50px 100px 80px;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    width: 100%;
+    &-inner {
+        overflow-x: scroll;
+        box-sizing: border-box;
+        padding: 20px;
+        background: $code-background;
+        @include media(">medium") {
+            padding: 50px 100px 80px;
+        }
+    }
     .code-yellow {
         color: $code-yellow;
     }
@@ -23,26 +31,50 @@ $code-background: #2E3031;
         display: block;
         margin: 0;
         position: absolute;
-        left: -100px;
-        top: 50%;
-        transform: translateY(-50%) rotate(270deg);
+        left: 50%;
+        top: -20px;
+        transform: translate(-50%, -100%) rotate(0deg);
+        @include media(">1360px") {
+            left: -100px;
+            top: 50%;
+            transform: translate(0, -50%) rotate(270deg);
+        }
     }
     .code__button {
         text-align: center;
         padding: 10px;
         transition: all .3s ease;
-        position: absolute;
-        width: 50px;
-        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: column;        
         &:hover {
             cursor: pointer;
         }
         span {
             font-weight: $global-weight-bold;
+        }
+    }
+    .code__button--desktop {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        display: none;   
+        @include media(">large") {
+            display: flex;   
+        }
+    }
+    .code__button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media(">large") {
+            display: none;
+        }
+        & > div {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
         }
     }
     .code__button--reset {

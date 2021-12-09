@@ -1,27 +1,42 @@
 body {
     font-family: $global-font;
     color: $white;
+    background-color: $dark-gray;
 }
 .App {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: scroll;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: $dark-gray;
+    overflow-x: hidden;
+    max-width: 100%;
+    @include media(">medium") {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+.container{
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 h1 {
     font-family: $heading-font;
-    font-size: 100px;
     color: $white;
     text-transform: uppercase;
     text-align: center;
     line-height: 1.2;
+    font-size: 40px;
+    @include media(">medium") {
+        font-size: 70px;
+    }
+    @include media(">xlarge") {
+        font-size: 100px;
+    }
 }
 h2 {
     font-family: $heading-font;
