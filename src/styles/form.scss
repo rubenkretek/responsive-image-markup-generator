@@ -102,8 +102,13 @@
         }
         &.active {
             background: $primary-color;
+            &:hover,
+            &:focus {
+                background: $primary-color;
+            }
         }
-        &:hover {
+        &:hover,
+        &:focus {
             cursor: pointer;
             background: rgba($white, .2);
         }
