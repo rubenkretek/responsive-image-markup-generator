@@ -2,6 +2,7 @@ import React from "react";
 import { GrPowerReset, GrCopy } from 'react-icons/gr';
 import { IconContext } from "react-icons";
 
+
 import CodeLine from "./CodeLine";
 
 const Code = ({ results, setResults }) => {
@@ -26,10 +27,14 @@ const Code = ({ results, setResults }) => {
                     <code className="html" id="html">
                         {results.map(result => (
                             <CodeLine
+                                result={result}
+                                key={result.id}
                                 width={result.width}
                                 height={result.height}
                                 screenWidth={result.screenWidth}
                                 source={result.source}
+                                results={results}
+                                setResults={setResults}
                             />
                         ))}
                     </code>

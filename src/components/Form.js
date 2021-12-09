@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRatioHeight, screenWidth, setScreenWidth, results, setResults, source, setSource }) => {
     // Functions
@@ -14,7 +15,8 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
                 height: rounded_calculated_height,
                 width: width,
                 screenWidth: screenWidth,
-                source: source
+                source: source,
+                id: uuidv4()
             }
         ]);
         setWidth("");
@@ -31,7 +33,7 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
             <div className="form__container">
 
                 <div className="form__scrset">
-                    <label for="source">Source</label>
+                    <label htmlFor="source">Source</label>
                     <input
                         type="text"
                         name="source"
@@ -42,7 +44,7 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
                 </div>
 
                 <div className="form__aspect-ratio">
-                    <label for="RatioWidth">Aspect Ratio</label>
+                    <label htmlFor="RatioWidth">Aspect Ratio</label>
                     <div className="form__aspect-ratio-inputs">
                         <div className="form__aspect-ratio-width">
                             <input
@@ -71,7 +73,7 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
                 </div>
 
                 <div className="form__breakpoint">
-                    <label for="cars">Select your breakpoint</label>
+                    <label htmlFor="cars">Select your breakpoint</label>
                     <select name="screenWidth" onChange={e => setScreenWidth(+e.target.value)}>
                         <option value="1600">1600px</option>
                         <option value="1440">1440px</option>
@@ -84,7 +86,7 @@ const Form = ({ width, setWidth, ratioWidth, setRatioWidth, ratioHeight, setRati
                 </div>
 
                 <div className="form__element-width">
-                    <label for="width">Width</label>
+                    <label htmlFor="width">Width</label>
                     <input
                         type="number"
                         name="width"
